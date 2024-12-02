@@ -1,0 +1,21 @@
+import numpy as np
+from scipy.integrate import cumulative_trapezoid
+import matplotlib.pyplot as plt
+
+s_maks = 30 #perpindahan benda sejauh 30 m
+
+x = np.linspace(0, s_maks, 100)
+
+F = 2 * x**2 + 4*x + 2
+
+W = cumulative_trapezoid(F, x, initial = 0)
+
+# Menambahkan label, judul, dan grid
+plt.plot(x, W, marker='o', color='b', linestyle='-', label="W = integral F(x) dx")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Grafik Gaya Tidak Konstan")
+plt.legend()
+plt.grid(True)
+plt.show()
+
