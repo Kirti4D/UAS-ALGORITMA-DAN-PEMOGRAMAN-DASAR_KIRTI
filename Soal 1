@@ -1,0 +1,25 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+k = 60 # dalam satuan N/m
+x = 0.02 # dalam satuan m
+
+# Definisi fungsi hukum hooke F(x)
+def F(x):
+    return -k*x
+
+# Mendefinisikan rentang data waktu (t)
+x = np.arange(0, 10, 1)
+
+# Menghitung nilai y untuk setiap nilai x
+y = F(x)
+
+# Menambahkan label, judul, dan grid
+plt.plot(x, y, marker='o', color='b', linestyle='-', label="Grafik GLB")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Hukum Hooke")
+plt.legend()
+plt.grid(True)
+plt.show()
+
