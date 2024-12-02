@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+A = 0.05 #Amplitudo dalam meter
+T = 10
+t_maks = 50
+
+#Menentukan array waktu
+t =np.linspace(0, t_maks, 100000)
+
+#Menentukan persaman ghs
+y = A * np.sin((2 * np.pi / T) * t)
+
+plt.figure(figsize = (10,5))
+plt.plot(t, y, marker='o', color='b', linestyle='-', label="A * np.sin((2 * np.pi / T) * t)")
+plt.xlabel("Waktu (detik)")
+plt.ylabel("Posisi simpangan (meter)")
+plt.title("Grafik Gerak Hamonik Sederhana")
+plt.legend()
+plt.grid(True)
+plt.show()
+
