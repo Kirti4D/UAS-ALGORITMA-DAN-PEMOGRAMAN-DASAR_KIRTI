@@ -1,0 +1,24 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameter
+g = 10  # percepatan gravitasi (m/s^2)
+
+# Fungsi untuk menghitung ketinggian maksimum
+def hitung_ketinggian(V0, g):
+    return (V0**2) / (2 * g)
+
+# Rentang kecepatan awal
+V0 = np.arange(0, 100, 1)  # dari 0 hingga 99 m/s
+
+# Menghitung ketinggian maksimum untuk setiap kecepatan awal
+h = hitung_ketinggian(V0, g)
+
+# Plot grafik
+plt.plot(V0, h, marker='o', color='b', linestyle='-', markersize=4)
+plt.title('Grafik Ketinggian Maksimum terhadap Kecepatan Awal')
+plt.xlabel('Kecepatan Awal (m/s)')
+plt.ylabel('Ketinggian Maksimum (m)')
+plt.grid(True)
+plt.show()
+
